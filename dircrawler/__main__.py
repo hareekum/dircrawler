@@ -4,6 +4,7 @@ import argparse
 import sys
 
 from .crawl import DirCrawler
+from .structures import FileStatus
 
 
 def handle_args():
@@ -32,6 +33,8 @@ def main():
                             snapshot_file=options.snapshot_file,
                             snapshot_handler=options.snapshot_handler)
     for filepath, status, transformed in dircrawler.traverse(transformer=options.transformer):
+        if status == FileStatus.UNCHANGED:
+            continue
         print "%s\t%s\t%s" % (status, transformed, filepath)
 
 
