@@ -29,4 +29,4 @@ class WhiteSpaceSeparatedSnapshotHandler(AbstractSnapshotHandler):
                     continue
                 filepath, mtime = line.split()
                 mod_ts = utils.timestamp_to_datetime(float(mtime))
-                yield filepath, structures.FileState(mod_ts=mod_ts)
+                yield filepath, structures.SnapshotState(mod_ts=mod_ts)

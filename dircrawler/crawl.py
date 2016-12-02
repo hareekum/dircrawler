@@ -50,9 +50,14 @@ class DirCrawler(object):
         """Returns state of a given filepath diffing against snapshot"""
         if filepath not in self.snapshot:
             return FileStatus.ADDED
-        elif utils.mod_ts_in_utc(filepath) > self.snapshot[filepath].mod_ts:
-            self.snapshot[filepath].visited = True
+
+        current_mod_ts = utils.mod_ts_in_utc(filepath)
+        snapshot_mod_ts = self.snapshot[filepath].mod_ts
+        self.snapshot[filepath].visited = True
+        if current_mod_ts > snapshot_mod_ts:
             return FileStatus.MODIFIED
+        elif current_mod_ts == snapshot_mod_ts:
+            return FileStatus.UNCHANGED
         else:
             # This should not happen
             return FileStatus.UNKNOWN
