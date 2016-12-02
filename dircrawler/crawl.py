@@ -68,7 +68,7 @@ class DirCrawler(object):
         """
         if self.progress:
             bar = progressbar.ProgressBar(
-                widgets=['Progress: ', progressbar.Percentage(), ' | ', progressbar.ETA()],
+                widgets=['Number of files: ', progressbar.Counter(), ' | ', progressbar.Bar()],
                 max_value=self.file_count, redirect_stdout=True)
         count = 0
         transformer_method = locate(transformer)().transform if transformer else lambda x: ''
