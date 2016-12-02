@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import os
 
 from setuptools import setup, find_packages
@@ -42,4 +40,9 @@ setup(
     tests_require=['setuptools==30.0.0', 'nose==1.3.7', 'mock==2.0.0', 'pyfakefs==2.9',
                    'freezegun==0.3.7'],
     cmdclass={'test': NoseTestCommand},
+    entry_points={
+        'console_scripts': [
+            'crawl = dircrawler.__main__:main'
+        ],
+    }
 )
