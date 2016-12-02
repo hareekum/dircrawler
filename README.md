@@ -1,6 +1,24 @@
 # dircrawler
 dircrawl leverages python's os.walk and supports a set of operations during traversal
 
+```bash
+crawl -h
+usage: crawl [-h] -d DIRECTORY [-sf SNAPSHOT_FILE] [-sh SNAPSHOT_HANDLER]
+             [-t TRANSFORMER] [-p]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -d DIRECTORY, --directory DIRECTORY
+                        Directory path to traverse
+  -sf SNAPSHOT_FILE, --snapshot-file SNAPSHOT_FILE
+                        Snapshot file path
+  -sh SNAPSHOT_HANDLER, --snapshot-handler SNAPSHOT_HANDLER
+                        Import path of snapshot handler class
+  -t TRANSFORMER, --transformer TRANSFORMER
+                        Import path of transformer class
+  -p, --progress        Show progress bar
+```
+
 ## Snapshots
 If a snapshot file and snapshot handler is specified, dircrawler will compare current directory tree
 with snapshot information and return state of a file.
