@@ -18,7 +18,7 @@ Currently, dircrawler only supports snapshot handlers accepting a filepath as an
 the parse() method
 
 Here are the snapshot handlers which come along with dircrawler:
-*WhiteSpaceSeparatedSnapshotHandler* - Parses file states from a file having values split by whitespaces
+- *WhiteSpaceSeparatedSnapshotHandler* - Parses file states from a file having values split by whitespaces
 
 
 ## Transformers
@@ -31,12 +31,10 @@ Currently, dircrawler only supports transformers accepting a filepath as an argu
 the transform() method
 
 Here are the transformers which come along with dircrawler:
-*MD5Transformer* - Computes MD5 hash of a file
-*FirstLineTransformer* - Gets the first line of a file
+- *MD5Transformer* - Computes MD5 hash of a file
+- *FirstLineTransformer* - Gets the first line of a file
 
-Both snapshot handlers and transformers are meant to be pluggable, meaning you plug in your own classes
-as long as they implement the required method. One way to ensure compatibility is to have your classes
-extend and implement the appropriate abstract class
+### Note: Both snapshot handlers and transformers are meant to be pluggable, meaning you plug in your own classes as long as they implement the required method. One way to ensure compatibility is to have your classes extend and implement the appropriate abstract class
 
 ## Trying it out
 - First, create a virtualenv and activate it
