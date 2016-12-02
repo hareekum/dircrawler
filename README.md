@@ -48,3 +48,9 @@ Here are the transformers which come along with dircrawler:
     ```bash
     crawl -d /some/dir -p -sf /some/snapshot.txt -sh dircrawler.snapshot_handlers.WhiteSpaceSeparatedSnapshotHandler -t dircrawler.transformers.FirstLineTransformer
     ```
+    
+Example of a snapshot file:
+```
+/dev/dircrawler/dircrawler/__init__.py 1477983600
+/dev/dircrawler/dircrawler/test.py 1480647250
+```
