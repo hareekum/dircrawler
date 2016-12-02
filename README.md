@@ -41,10 +41,12 @@ extend and implement the appropriate abstract class
 ## Trying it out
 - First, create a virtualenv and activate it
 - Checkout the project and pip install it in your virtual env
+
     ```bash
     dircrawler> pip install .
     ```
 - Run the crawler
+
     ```bash
     crawl -d /some/dir -p -sf /some/snapshot.txt -sh dircrawler.snapshot_handlers.WhiteSpaceSeparatedSnapshotHandler -t dircrawler.transformers.FirstLineTransformer
     ```
